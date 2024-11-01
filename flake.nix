@@ -82,7 +82,7 @@
             autosuggestion.enable = true;
             syntaxHighlighting.enable = true;
             shellAliases = {
-              switch = "darwin-rebuild switch --flake path:/Users/${hostname}/.config/nix";
+              switch = "darwin-rebuild switch --flake path:/Users/${hostname}/.config/nix-dotfiles";
             };
             oh-my-zsh = {
               enable = true;
