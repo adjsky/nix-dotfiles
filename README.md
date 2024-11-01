@@ -32,7 +32,7 @@ ssh-keygen -t ed25519 -C "pers@mail.com" -f ~/.ssh/pers
 ssh-keygen -t ed25519 -C "work@mail.com" -f ~/.ssh/work
 ```
 
-2. Add generated keys to GitHub for each account.
+2. Add the generated keys to GitHub for each account.
 
 3. Clone!
 
