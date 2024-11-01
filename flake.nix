@@ -82,7 +82,7 @@
             autosuggestion.enable = true;
             syntaxHighlighting.enable = true;
             shellAliases = {
-              switch = "darwin-rebuild switch --flake path:/Users/${hostname}/.config/nix-dotfiles";
+              switch = "darwin-rebuild switch --flake path:$HOME/.config/nix-dotfiles";
             };
             oh-my-zsh = {
               enable = true;
@@ -119,6 +119,24 @@
             plugins = with pkgs.vimPlugins; [
               catppuccin-nvim
             ];
+          };
+
+          programs.ssh = {
+            enable = true;
+            matchBlocks = {
+              "github-pers" = {
+                hostname = "ssh.github.com";
+                port = 443;
+                identityFile = "~/.ssh/pers";
+                identitiesOnly = true;
+              };
+              "github-work" = {
+                hostname = "ssh.github.com";
+                port = 443;
+                identityFile = "~/.ssh/work";
+                identitiesOnly = true;
+              };
+            };
           };
         };
     in
