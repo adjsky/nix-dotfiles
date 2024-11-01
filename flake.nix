@@ -22,7 +22,6 @@
     }:
     let
       platform = "aarch64-darwin";
-      hostname = "adjsky";
       configuration =
         { pkgs, ... }:
         {
@@ -44,9 +43,9 @@
           nixpkgs.config.allowUnfree = true;
 
           # Declare the user that will be running `nix-darwin`.
-          users.users.${hostname} = {
-            name = hostname;
-            home = "/Users/${hostname}";
+          users.users.adjsky = {
+            name = "adjsky";
+            home = "/Users/adjsky";
           };
 
           security.pam.enableSudoTouchIdAuth = true;
@@ -141,7 +140,7 @@
         };
     in
     {
-      darwinConfigurations.${hostname} = nix-darwin.lib.darwinSystem {
+      darwinConfigurations.adjsky-macbook = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           home-manager.darwinModules.home-manager
@@ -149,7 +148,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.verbose = true;
-            home-manager.users.${hostname} = homeconfig;
+            home-manager.users.adjsky = homeconfig;
           }
         ];
       };
