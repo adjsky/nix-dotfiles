@@ -5,13 +5,17 @@
 
   home.packages = with pkgs; [
     deno
-    nodejs
+    nodejs_22
     devbox
     ngrok
     direnv
     go
     cargo
     rustc
+    gleam
+    erlang_27
+    elixir_1_17
+    rebar3
   ];
 
   # Let home-manager install and manage itself.
