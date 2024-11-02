@@ -10,6 +10,8 @@
     ngrok
     direnv
     go
+    cargo
+    rustc
   ];
 
   # Let home-manager install and manage itself.
