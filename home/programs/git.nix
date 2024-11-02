@@ -4,8 +4,6 @@
     pull.default = "current";
     pull.rebase = true;
     fetch.prune = true;
-    branch.autoSetupMerge = "always";
-    branch.autoSetupRebase = "always";
     diff.colorMoved = "zebra";
     push.default = "current";
     core.editor = "nvim";
