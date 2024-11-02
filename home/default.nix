@@ -9,6 +9,7 @@
     devbox
     ngrok
     direnv
+    go
   ];
 
   # Let home-manager install and manage itself.
