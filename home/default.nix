@@ -8,6 +8,7 @@
     nodejs
     devbox
     ngrok
+    direnv
   ];
 
   # Let home-manager install and manage itself.
