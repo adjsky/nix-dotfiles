@@ -41,7 +41,13 @@ let
         nixfmt-rfc-style
       ];
 
-      fonts.packages = with pkgs; [ jetbrains-mono ];
+      fonts.packages = with pkgs; [
+        (nerdfonts.override {
+          fonts = [
+            "JetBrainsMono"
+          ];
+        })
+      ];
     };
 in
 nix-darwin.lib.darwinSystem {

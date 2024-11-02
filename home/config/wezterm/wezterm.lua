@@ -192,7 +192,7 @@ local keys = {
 }
 
 local config = {
-	font = wezterm.font("JetBrains Mono"),
+	font = wezterm.font("JetBrainsMono Nerd Font"),
 	font_size = 14,
 	front_end = "WebGpu",
 
