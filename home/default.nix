@@ -16,6 +16,7 @@
     erlang_27
     elixir_1_17
     rebar3
+    tableplus
   ];
 
   # Let home-manager install and manage itself.
