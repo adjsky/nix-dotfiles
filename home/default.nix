@@ -17,6 +17,7 @@
     elixir_1_17
     rebar3
     tableplus
+    colima
   ];
 
   # Let home-manager install and manage itself.
