@@ -4,6 +4,7 @@
   home.stateVersion = "23.05";
 
   home.packages = with pkgs; [
+    nixfmt-rfc-style
     deno
     nodejs_22
     devbox

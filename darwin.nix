@@ -38,7 +38,6 @@ let
 
       environment.systemPackages = with pkgs; [
         nixd
-        nixfmt-rfc-style
       ];
 
       fonts.packages = with pkgs; [
