@@ -29,4 +29,6 @@
   programs.wezterm = import ./programs/wezterm.nix;
   programs.neovim = import ./programs/nvim.nix { inherit pkgs; };
   programs.ssh = import ./programs/ssh.nix;
+  # zed-editor is broken on darwin, uncomment when it'll be available
+  # programs.zed-editor = import ./programs/zed.nix;
 }
