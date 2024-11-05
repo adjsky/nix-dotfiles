@@ -20,6 +20,7 @@
     tableplus
     colima
     zed-editor
+    slack
   ];
 
   # Use the external zed config for quicker hacking.
