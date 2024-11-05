@@ -1,0 +1,17 @@
+{
+  "auto_install_extensions": {
+    "astro": true,
+    "catppuccin": true,
+    "deno": true,
+    "elixir": true,
+    "lua": true,
+    "nix": true,
+    "svelte": true,
+    "vue": true
+  },
+  "auto_update": false,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 16,
+  "git_status": true,
+  "theme": "Catppuccin Macchiato"
+}
