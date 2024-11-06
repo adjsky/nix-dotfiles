@@ -6,40 +6,31 @@
   ...
 }:
 let
+  username = "adjsky";
   configuration =
     { pkgs, ... }:
     {
       services.nix-daemon.enable = true;
 
-      # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
       system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility. please read the changelog 
-      # before changing: `darwin-rebuild changelog`.
       system.stateVersion = 4;
 
-      # The platform the configuration will be used on.
-      # If you're on an older system, replace with "x86_64-darwin"
-      nixpkgs.hostPlatform = "aarch64-darwin";
+      system.defaults.finder.AppleShowAllExtensions = true;
+      system.defaults.finder.AppleShowAllFiles = true;
+      system.defaults.finder.FXPreferredViewStyle = "Nlsv";
+      system.defaults.finder._FXSortFoldersFirst = true;
 
+      nixpkgs.hostPlatform = "aarch64-darwin";
       nixpkgs.config.allowUnfree = true;
 
-      # Declare the user that will be running `nix-darwin`.
-      users.users.adjsky = rec {
-        name = "adjsky";
-        home = "/Users/${name}";
+      users.users.${username} = {
+        name = username;
+        home = "/Users/${username}";
       };
 
       security.pam.enableSudoTouchIdAuth = true;
-
-      # Create /etc/zshrc that loads the nix-darwin environment. 
-      programs.zsh.enable = true;
-
-      environment.systemPackages = with pkgs; [
-        nixd
-      ];
 
       fonts.packages = with pkgs; [
         (nerdfonts.override {
@@ -59,7 +50,7 @@ nix-darwin.lib.darwinSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.verbose = true;
-      home-manager.users.adjsky = import ./home;
+      home-manager.users.${username} = import ./home;
       home-manager.sharedModules = [
         mac-app-util.homeManagerModules.default
       ];
