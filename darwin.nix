@@ -2,6 +2,7 @@
   self,
   nix-darwin,
   home-manager,
+  mac-app-util,
   ...
 }:
 let
@@ -51,6 +52,7 @@ let
 in
 nix-darwin.lib.darwinSystem {
   modules = [
+    mac-app-util.darwinModules.default
     configuration
     home-manager.darwinModules.home-manager
     {
@@ -58,6 +60,9 @@ nix-darwin.lib.darwinSystem {
       home-manager.useUserPackages = true;
       home-manager.verbose = true;
       home-manager.users.adjsky = import ./home;
+      home-manager.sharedModules = [
+        mac-app-util.homeManagerModules.default
+      ];
     }
   ];
 }
