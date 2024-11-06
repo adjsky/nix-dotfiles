@@ -25,6 +25,7 @@
 
   # Use the external zed config for quicker hacking.
   xdg.configFile."zed/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
+  xdg.configFile."zed/keymap.json".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
 
   # Let home-manager install and manage itself.
   programs.home-manager.enable = true;

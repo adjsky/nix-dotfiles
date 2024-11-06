@@ -1,5 +1,6 @@
 {
   "auto_install_extensions": {
+    "html": true,
     "astro": true,
     "catppuccin": true,
     "deno": true,
@@ -12,6 +13,6 @@
   "auto_update": false,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_size": 16,
-  "git_status": true,
+  "vim_mode": true,
   "theme": "Catppuccin Macchiato"
 }
