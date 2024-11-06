@@ -22,6 +22,15 @@ let
       system.defaults.finder.FXPreferredViewStyle = "Nlsv";
       system.defaults.finder._FXSortFoldersFirst = true;
 
+      system.defaults.dock.persistent-apps = [
+        "/System/Applications/Launchpad.app"
+        # Assume these are installed, manage them declaratively in some time...
+        "/Applications/Visual Studio Code.app"
+        "/Applications/Zen Browser.app"
+        "${pkgs.wezterm}/Applications/WezTerm.app"
+        "${pkgs.slack}/Applications/Slack.app"
+      ];
+
       nixpkgs.hostPlatform = "aarch64-darwin";
       nixpkgs.config.allowUnfree = true;
 
