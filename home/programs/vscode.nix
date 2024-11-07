@@ -1,4 +1,3 @@
 {
   enable = true;
-  enableUpdateCheck = false;
 }
