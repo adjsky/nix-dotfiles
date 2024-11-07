@@ -14,8 +14,15 @@ let
 
       nix.settings.experimental-features = "nix-command flakes";
 
+      nixpkgs.hostPlatform = "aarch64-darwin";
+      nixpkgs.config.allowUnfree = true;
+
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 4;
+
+      system.activationScripts.extraActivation.text = ''
+        softwareupdate --install-rosetta --agree-to-license
+      '';
 
       system.defaults.finder.AppleShowAllExtensions = true;
       system.defaults.finder.AppleShowAllFiles = true;
@@ -30,9 +37,6 @@ let
         "${pkgs.wezterm}/Applications/WezTerm.app"
         "${pkgs.slack}/Applications/Slack.app"
       ];
-
-      nixpkgs.hostPlatform = "aarch64-darwin";
-      nixpkgs.config.allowUnfree = true;
 
       users.users.${username} = {
         name = username;
@@ -52,9 +56,9 @@ let
 in
 nix-darwin.lib.darwinSystem {
   modules = [
-    mac-app-util.darwinModules.default
     configuration
     home-manager.darwinModules.home-manager
+    mac-app-util.darwinModules.default
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
