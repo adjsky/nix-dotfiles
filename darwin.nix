@@ -24,9 +24,9 @@ let
 
       system.defaults.dock.persistent-apps = [
         "/System/Applications/Launchpad.app"
-        # Assume these are installed, manage them declaratively in some time...
+        # Assume zen browser is installed, manage it declaratively in some time...
         "/Applications/Zen Browser.app"
-        "/Applications/Visual Studio Code.app"
+        "${pkgs.vscode}/Applications/Visual Studio Code.app"
         "${pkgs.wezterm}/Applications/WezTerm.app"
         "${pkgs.slack}/Applications/Slack.app"
       ];

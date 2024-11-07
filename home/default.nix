@@ -36,4 +36,5 @@
   programs.wezterm = import ./programs/wezterm.nix;
   programs.neovim = import ./programs/nvim.nix { inherit pkgs; };
   programs.ssh = import ./programs/ssh.nix;
+  programs.vscode = import ./programs/vscode.nix;
 }
