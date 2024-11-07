@@ -14,28 +14,42 @@ let
 
       nix.settings.experimental-features = "nix-command flakes";
 
-      nixpkgs.hostPlatform = "aarch64-darwin";
-      nixpkgs.config.allowUnfree = true;
+      nixpkgs = {
+        hostPlatform = "aarch64-darwin";
+        config = {
+          allowUnfree = true;
+        };
+        overlays = [
+          (import ./overlays)
+        ];
+      };
 
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-      system.stateVersion = 4;
+      system = {
+        configurationRevision = self.rev or self.dirtyRev or null;
+        stateVersion = 4;
 
-      system.activationScripts.extraActivation.text = ''
-        softwareupdate --install-rosetta --agree-to-license
-      '';
+        activationScripts.extraActivation.text = ''
+          softwareupdate --install-rosetta --agree-to-license
+        '';
 
-      system.defaults.finder.AppleShowAllExtensions = true;
-      system.defaults.finder.AppleShowAllFiles = true;
-      system.defaults.finder.FXPreferredViewStyle = "Nlsv";
-      system.defaults.finder._FXSortFoldersFirst = true;
+        defaults = {
+          finder = {
+            AppleShowAllExtensions = true;
+            AppleShowAllFiles = true;
+            FXPreferredViewStyle = "Nlsv";
+            _FXSortFoldersFirst = true;
+          };
 
-      system.defaults.dock.persistent-apps = [
-        # Assume zen browser is installed, manage it declaratively in some time...
-        "/Applications/Zen Browser.app"
-        "${pkgs.vscode}/Applications/Visual Studio Code.app"
-        "${pkgs.wezterm}/Applications/WezTerm.app"
-        "${pkgs.slack}/Applications/Slack.app"
-      ];
+          dock = {
+            persistent-apps = [
+              "${pkgs.zen-browser}/Applications/Zen Browser.app"
+              "${pkgs.vscode}/Applications/Visual Studio Code.app"
+              "${pkgs.wezterm}/Applications/WezTerm.app"
+              "${pkgs.slack}/Applications/Slack.app"
+            ];
+          };
+        };
+      };
 
       users.users.${username} = {
         name = username;

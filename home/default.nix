@@ -22,19 +22,24 @@
     colima
     zed-editor
     slack
+    zen-browser
   ];
 
-  # Use the external zed config for quicker hacking.
-  xdg.configFile."zed/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
-  xdg.configFile."zed/keymap.json".source = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
+  xdg.configFile = with config.lib.file; {
+    # Use the external zed config for quicker hacking.
+    "zed/settings.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
+    "zed/keymap.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
+  };
 
-  # Let home-manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let home-manager install and manage itself.
+    home-manager.enable = true;
 
-  programs.zsh = import ./programs/zsh.nix { inherit config; };
-  programs.git = import ./programs/git.nix;
-  programs.wezterm = import ./programs/wezterm.nix;
-  programs.neovim = import ./programs/nvim.nix { inherit pkgs; };
-  programs.ssh = import ./programs/ssh.nix;
-  programs.vscode = import ./programs/vscode.nix;
+    zsh = import ./programs/zsh.nix { inherit config; };
+    git = import ./programs/git.nix;
+    wezterm = import ./programs/wezterm.nix;
+    neovim = import ./programs/nvim.nix { inherit pkgs; };
+    ssh = import ./programs/ssh.nix;
+    vscode = import ./programs/vscode.nix;
+  };
 }
