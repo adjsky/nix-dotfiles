@@ -30,7 +30,6 @@ let
       system.defaults.finder._FXSortFoldersFirst = true;
 
       system.defaults.dock.persistent-apps = [
-        "/System/Applications/Launchpad.app"
         # Assume zen browser is installed, manage it declaratively in some time...
         "/Applications/Zen Browser.app"
         "${pkgs.vscode}/Applications/Visual Studio Code.app"
