@@ -23,6 +23,8 @@
     zed-editor
     slack
     zen-browser
+    sops
+    age
   ];
 
   xdg.configFile = with config.lib.file; {
