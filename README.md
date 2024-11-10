@@ -27,6 +27,26 @@ EOF
 make init
 ```
 
+## Hints
+
+### Git
+
+#### SSH schema with a custom hostname
+
 ```bash
 git clone git@github-pers:adjsky/dotfiles.git
+```
+
+### Nix
+
+#### Update flake.lock
+
+```bash
+nix flake update
+```
+
+#### Rebuild system
+
+```bash
+switch
 ```
