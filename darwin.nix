@@ -3,10 +3,12 @@
   nix-darwin,
   home-manager,
   mac-app-util,
+  sops-nix,
   ...
 }:
 let
   username = "adjsky";
+  homedir = "/Users/${username}";
   configuration =
     { pkgs, ... }:
     {
@@ -27,33 +29,40 @@ let
       system = {
         configurationRevision = self.rev or self.dirtyRev or null;
         stateVersion = 4;
-
-        activationScripts.extraActivation.text = ''
-          softwareupdate --install-rosetta --agree-to-license
-        '';
-
-        defaults = {
-          finder = {
-            AppleShowAllExtensions = true;
-            AppleShowAllFiles = true;
-            FXPreferredViewStyle = "Nlsv";
-            _FXSortFoldersFirst = true;
-          };
-
-          dock = {
-            persistent-apps = [
-              "${pkgs.zen-browser}/Applications/Zen Browser.app"
-              "${pkgs.vscode}/Applications/Visual Studio Code.app"
-              "${pkgs.wezterm}/Applications/WezTerm.app"
-              "${pkgs.slack}/Applications/Slack.app"
-            ];
-          };
-        };
       };
+
+      system.defaults.finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        FXPreferredViewStyle = "Nlsv";
+        _FXSortFoldersFirst = true;
+      };
+
+      system.defaults.CustomUserPreferences."com.apple.finder" = {
+        NewWindowTarget = "PfHm"; # new windows open in home dir
+      };
+
+      system.defaults.dock = {
+        persistent-apps = [
+          "${pkgs.zen-browser}/Applications/Zen Browser.app"
+          "${pkgs.vscode}/Applications/Visual Studio Code.app"
+          "${pkgs.wezterm}/Applications/WezTerm.app"
+          "${pkgs.slack}/Applications/Slack.app"
+        ];
+      };
+
+      system.defaults.screencapture = {
+        location = "Clipboard";
+        disable-shadow = true;
+      };
+
+      system.activationScripts.extraActivation.text = ''
+        softwareupdate --install-rosetta --agree-to-license
+      '';
 
       users.users.${username} = {
         name = username;
-        home = "/Users/${username}";
+        home = homedir;
       };
 
       security.pam.enableSudoTouchIdAuth = true;
@@ -79,6 +88,7 @@ nix-darwin.lib.darwinSystem {
       home-manager.users.${username} = import ./home;
       home-manager.sharedModules = [
         mac-app-util.homeManagerModules.default
+        sops-nix.homeManagerModules.sops
       ];
     }
   ];

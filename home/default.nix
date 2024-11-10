@@ -3,6 +3,17 @@
   # Internal compatibility configuration for home-manager, don't change this!
   home.stateVersion = "23.05";
 
+  sops = {
+    age.keyFile = "${config.home.homeDirectory}/Library/Application Support/sops/age/keys.txt";
+    defaultSopsFile = ../secrets/darwin.yaml;
+    secrets = {
+      "gitconfig/work" = { };
+      "gitconfig/pers" = { };
+      "ssh/work/private_key" = { };
+      "ssh/pers/private_key" = { };
+    };
+  };
+
   home.packages = with pkgs; [
     nixd
     nixfmt-rfc-style
@@ -33,6 +44,15 @@
     "zed/keymap.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
   };
 
+  home.file = with config.lib.file; {
+    "Programming/pers/.gitconfig".source =
+      mkOutOfStoreSymlink
+        config.sops.secrets."gitconfig/pers".path;
+    "Programming/work/.gitconfig".source =
+      mkOutOfStoreSymlink
+        config.sops.secrets."gitconfig/work".path;
+  };
+
   programs = {
     # Let home-manager install and manage itself.
     home-manager.enable = true;
@@ -41,7 +61,7 @@
     git = import ./programs/git.nix;
     wezterm = import ./programs/wezterm.nix;
     neovim = import ./programs/nvim.nix { inherit pkgs; };
-    ssh = import ./programs/ssh.nix;
+    ssh = import ./programs/ssh.nix { inherit config; };
     vscode = import ./programs/vscode.nix;
   };
 }
