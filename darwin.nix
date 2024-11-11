@@ -51,11 +51,6 @@ let
         ];
       };
 
-      system.defaults.screencapture = {
-        location = "Clipboard";
-        disable-shadow = true;
-      };
-
       system.activationScripts.extraActivation.text = ''
         softwareupdate --install-rosetta --agree-to-license
       '';
