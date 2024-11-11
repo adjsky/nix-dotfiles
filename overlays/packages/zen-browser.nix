@@ -6,11 +6,11 @@
 
 stdenv.mkDerivation rec {
   pname = "zen-browser";
-  version = "1.0.1-a.17";
+  version = "1.0.1-a.19";
 
   src = fetchurl {
     url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen.macos-aarch64.dmg";
-    sha256 = "6c3d3563b81ffbe7a071bf6f76af88a1db361d3adaca14558df80b9215d5012d";
+    sha256 = "228f79a57cc8077af46ce5407008b32193e1b01823eaf7fa27a21c39f340b4cf";
   };
 
   nativeBuildInputs = [ undmg ];
