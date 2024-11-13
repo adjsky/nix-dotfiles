@@ -69,6 +69,14 @@ let
           ];
         })
       ];
+
+      homebrew = {
+        enable = true;
+        masApps = {
+          Outline = 1356178125;
+          AmneziaWG = 6478942365;
+        };
+      };
     };
 in
 nix-darwin.lib.darwinSystem {

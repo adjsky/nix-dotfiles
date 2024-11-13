@@ -11,6 +11,7 @@
     plugins = [
       "direnv"
       "git"
+      "brew"
     ];
     theme = "robbyrussell";
   };

@@ -7,6 +7,7 @@
     age.keyFile = "${config.home.homeDirectory}/Library/Application Support/sops/age/keys.txt";
     defaultSopsFile = ../secrets/darwin.yaml;
     secrets = {
+      "amneziawg/ams" = { };
       "gitconfig/work" = { };
       "gitconfig/pers" = { };
       "ssh/work/private_key" = { };
@@ -51,6 +52,13 @@
     "Programming/work/.gitconfig".source =
       mkOutOfStoreSymlink
         config.sops.secrets."gitconfig/work".path;
+    "AmneziaWG/ams_init.conf" = {
+      text = "dummy";
+      onChange = ''
+        cp ${config.sops.secrets."amneziawg/ams".path} ~/AmneziaWG/ams.conf
+        rm ~/AmneziaWG/ams_init.conf
+      '';
+    };
   };
 
   programs = {
