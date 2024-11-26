@@ -37,6 +37,7 @@
     zen-browser
     sops
     age
+    google-chrome
   ];
 
   xdg.configFile = with config.lib.file; {
