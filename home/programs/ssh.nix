@@ -14,5 +14,11 @@
       identityFile = config.sops.secrets."ssh/work/private_key".path;
       identitiesOnly = true;
     };
+    "adjika.dev" = {
+      hostname = "147.45.111.36";
+      user = "root";
+      identityFile = config.sops.secrets."ssh/pers/private_key".path;
+      identitiesOnly = true;
+    };
   };
 }
