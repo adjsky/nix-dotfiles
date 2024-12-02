@@ -38,6 +38,7 @@
     sops
     age
     google-chrome
+    just
   ];
 
   xdg.configFile = with config.lib.file; {
