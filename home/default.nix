@@ -15,6 +15,12 @@
     };
   };
 
+  xdg.configFile = with config.lib.file; {
+    # Use the external zed config for quicker hacking.
+    "zed/settings.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
+    "zed/keymap.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
+  };
+
   home.packages = with pkgs; [
     nixd
     nixfmt-rfc-style
@@ -26,6 +32,8 @@
     go
     cargo
     rustc
+    rustfmt
+    rustPlatform.rustLibSrc
     gleam
     erlang_27
     elixir_1_17
@@ -41,12 +49,6 @@
     just
   ];
 
-  xdg.configFile = with config.lib.file; {
-    # Use the external zed config for quicker hacking.
-    "zed/settings.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
-    "zed/keymap.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
-  };
-
   home.file = with config.lib.file; {
     "Programming/pers/.gitconfig".source =
       mkOutOfStoreSymlink
@@ -61,6 +63,10 @@
         rm ~/AmneziaWG/ams_init.conf
       '';
     };
+  };
+
+  home.sessionVariables = {
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   programs = {
