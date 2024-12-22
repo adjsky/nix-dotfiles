@@ -75,6 +75,7 @@ let
         masApps = {
           Outline = 1356178125;
           AmneziaWG = 6478942365;
+          Yomu = 562211012;
         };
       };
     };
