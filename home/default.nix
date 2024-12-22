@@ -47,6 +47,7 @@
     age
     google-chrome
     just
+    postman
   ];
 
   home.file = with config.lib.file; {
