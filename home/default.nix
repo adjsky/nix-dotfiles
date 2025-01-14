@@ -48,6 +48,7 @@
     google-chrome
     just
     postman
+    pnpm
   ];
 
   home.file = with config.lib.file; {
