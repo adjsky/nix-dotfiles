@@ -12,8 +12,6 @@ let
   configuration =
     { pkgs, ... }:
     {
-      services.nix-daemon.enable = true;
-
       nix.settings.experimental-features = "nix-command flakes";
 
       nixpkgs = {
@@ -28,7 +26,7 @@ let
 
       system = {
         configurationRevision = self.rev or self.dirtyRev or null;
-        stateVersion = 4;
+        stateVersion = 5;
       };
 
       system.defaults.finder = {
@@ -63,11 +61,7 @@ let
       security.pam.enableSudoTouchIdAuth = true;
 
       fonts.packages = with pkgs; [
-        (nerdfonts.override {
-          fonts = [
-            "JetBrainsMono"
-          ];
-        })
+        nerd-fonts.jetbrains-mono
       ];
 
       homebrew = {
