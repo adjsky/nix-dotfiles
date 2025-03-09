@@ -6,16 +6,16 @@
 
 stdenv.mkDerivation rec {
   pname = "zen-browser";
-  version = "1.0.1-a.17";
+  version = "1.9b";
 
   src = fetchurl {
-    url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen.macos-aarch64.dmg";
-    sha256 = "6c3d3563b81ffbe7a071bf6f76af88a1db361d3adaca14558df80b9215d5012d";
+    url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen.macos-universal.dmg";
+    sha256 = "230b33d3f1cd0cc23f9e8341ec54f8b531e41fca575a01fa03492c47f07492e3";
   };
 
   nativeBuildInputs = [ undmg ];
 
-  sourceRoot = "Zen Browser.app";
+  sourceRoot = "Zen.app";
 
   installPhase = ''
     mkdir -p "$out/Applications/Zen Browser.app"
