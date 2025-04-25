@@ -58,7 +58,7 @@ let
         home = homedir;
       };
 
-      security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
