@@ -17,8 +17,10 @@
 
   xdg.configFile = with config.lib.file; {
     # Use the external zed config for quicker hacking.
-    "zed/settings.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
-    "zed/keymap.json".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
+    "zed/settings.json".source =
+      mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
+    "zed/keymap.json".source =
+      mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
   };
 
   home.packages = with pkgs; [
@@ -49,6 +51,7 @@
     just
     postman
     pnpm
+    php
   ];
 
   home.file = with config.lib.file; {
