@@ -51,7 +51,8 @@
     just
     postman
     pnpm
-    php
+    php84
+    php84Packages.composer
   ];
 
   home.file = with config.lib.file; {
