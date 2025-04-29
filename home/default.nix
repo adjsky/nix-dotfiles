@@ -49,7 +49,8 @@
     age
     google-chrome
     just
-    postman
+    bruno
+    zotero
     pnpm
     php84
     php84Packages.composer
