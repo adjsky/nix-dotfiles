@@ -41,6 +41,8 @@ let
       };
 
       system.defaults.dock = {
+        mru-spaces = false;
+
         persistent-apps = [
           "${pkgs.zen-browser}/Applications/Zen Browser.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
