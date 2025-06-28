@@ -27,7 +27,7 @@
     nixd
     nixfmt-rfc-style
     deno
-    nodejs_23
+    nodejs_24
     devbox
     ngrok
     direnv
