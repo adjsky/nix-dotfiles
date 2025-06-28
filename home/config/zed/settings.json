@@ -10,7 +10,8 @@
     "nix": true,
     "svelte": true,
     "vue": true,
-    "make": true
+    "make": true,
+    "caddyfile": true
   },
   "auto_update": false,
   "buffer_font_family": "JetBrainsMono Nerd Font",
