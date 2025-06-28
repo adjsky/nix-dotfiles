@@ -55,6 +55,7 @@
     php84
     php84Packages.composer
     libargon2
+    caddy
   ];
 
   home.file = with config.lib.file; {
