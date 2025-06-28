@@ -54,6 +54,7 @@
     pnpm
     php84
     php84Packages.composer
+    libargon2
   ];
 
   home.file = with config.lib.file; {
