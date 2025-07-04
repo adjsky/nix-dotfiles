@@ -56,6 +56,7 @@
     php84Packages.composer
     libargon2
     caddy
+    rclone
   ];
 
   home.file = with config.lib.file; {
