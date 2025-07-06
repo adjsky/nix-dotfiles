@@ -50,13 +50,13 @@
     google-chrome
     just
     bruno
-    zotero
     pnpm
     php84
     php84Packages.composer
     libargon2
     caddy
     rclone
+    joplin-desktop
   ];
 
   home.file = with config.lib.file; {
