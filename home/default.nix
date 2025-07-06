@@ -56,7 +56,6 @@
     libargon2
     caddy
     rclone
-    joplin-desktop
   ];
 
   home.file = with config.lib.file; {
