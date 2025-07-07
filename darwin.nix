@@ -19,9 +19,6 @@ let
         config = {
           allowUnfree = true;
         };
-        overlays = [
-          (import ./overlays)
-        ];
       };
 
       system = {
@@ -45,7 +42,7 @@ let
         mru-spaces = false;
 
         persistent-apps = [
-          "${pkgs.zen-browser}/Applications/Zen Browser.app"
+          "/Applications/Zen.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
           "${pkgs.wezterm}/Applications/WezTerm.app"
           "${pkgs.slack}/Applications/Slack.app"
@@ -69,6 +66,18 @@ let
 
       homebrew = {
         enable = true;
+
+        onActivation = {
+          cleanup = "zap";
+          autoUpdate = true;
+          upgrade = true;
+        };
+
+        casks = [
+          "zen"
+          "tableplus"
+        ];
+
         masApps = {
           Outline = 1356178125;
           AmneziaWG = 6478942365;

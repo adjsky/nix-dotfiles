@@ -40,11 +40,9 @@
     erlang_27
     elixir_1_17
     rebar3
-    tableplus
     colima
     zed-editor
     slack
-    zen-browser
     sops
     age
     google-chrome
