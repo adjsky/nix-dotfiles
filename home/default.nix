@@ -54,6 +54,8 @@
     libargon2
     caddy
     rclone
+    shellcheck
+    shfmt
   ];
 
   home.file = with config.lib.file; {
