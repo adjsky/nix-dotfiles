@@ -57,6 +57,7 @@
     shellcheck
     shfmt
     laravel
+    sqlite
   ];
 
   home.file = with config.lib.file; {
