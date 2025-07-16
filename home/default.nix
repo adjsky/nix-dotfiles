@@ -56,6 +56,7 @@
     rclone
     shellcheck
     shfmt
+    laravel
   ];
 
   home.file = with config.lib.file; {
