@@ -9,3 +9,14 @@ homebrew:
 .PHONY: init
 init: nix homebrew
 	nix run nix-darwin -- switch --flake .
+
+.PHONY: bump/flake
+bump/flake:
+	nix flake update
+
+.PHONY: bump/brew
+bump/brew:
+	brew upgrade --cask --greedy
+
+.PHONY: bump
+bump: bump/flake bump/brew
