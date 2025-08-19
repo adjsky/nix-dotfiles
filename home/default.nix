@@ -61,6 +61,7 @@
     process-compose
     tilt
     werf
+    nelm
   ];
 
   home.file = with config.lib.file; {
