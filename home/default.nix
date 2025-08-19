@@ -58,6 +58,8 @@
     shfmt
     laravel
     sqlite
+    process-compose
+    tilt
   ];
 
   home.file = with config.lib.file; {
