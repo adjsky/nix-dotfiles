@@ -62,6 +62,7 @@
     tilt
     werf
     nelm
+    yq-go
   ];
 
   home.file = with config.lib.file; {
