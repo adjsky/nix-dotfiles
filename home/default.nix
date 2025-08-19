@@ -60,6 +60,7 @@
     sqlite
     process-compose
     tilt
+    werf
   ];
 
   home.file = with config.lib.file; {
