@@ -63,6 +63,7 @@
     werf
     nelm
     yq-go
+    bat
   ];
 
   home.file = with config.lib.file; {
