@@ -1,6 +1,7 @@
 { config }:
 {
   enable = true;
+  enableDefaultConfig = false;
   matchBlocks = {
     "github-pers" = {
       hostname = "ssh.github.com";

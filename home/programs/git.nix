@@ -1,6 +1,6 @@
 {
   enable = true;
-  extraConfig = {
+  settings = {
     pull.default = "current";
     pull.rebase = true;
     fetch.prune = true;
