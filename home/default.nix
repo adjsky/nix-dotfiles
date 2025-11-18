@@ -15,13 +15,14 @@
     };
   };
 
-  xdg.configFile = with config.lib.file; {
-    # Use the external zed config for quicker hacking.
-    "zed/settings.json".source =
-      mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/settings.json";
-    "zed/keymap.json".source =
-      mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config/zed/keymap.json";
-  };
+  xdg.configFile =
+    let
+      dotfiles = config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nix-dotfiles/home/config";
+    in
+    {
+      "zed".source = "${dotfiles}/zed";
+      "wezterm".source = "${dotfiles}/wezterm";
+    };
 
   home.packages = with pkgs; [
     nixd

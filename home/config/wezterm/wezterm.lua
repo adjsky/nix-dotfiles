@@ -1,9 +1,5 @@
 local wezterm = require("wezterm")
 
-local custom_color_scheme = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
-custom_color_scheme.background = "#1e2030"
-custom_color_scheme.tab_bar.background = "transparent"
-
 local keys = {
 	{
 		key = "c",
@@ -196,11 +192,8 @@ local config = {
 	font_size = 14,
 	front_end = "WebGpu",
 	term = "wezterm",
-
 	default_cursor_style = "BlinkingBar",
-
 	disable_default_key_bindings = true,
-
 	window_padding = {
 		left = 6,
 		right = 6,
@@ -208,17 +201,7 @@ local config = {
 		bottom = 6,
 	},
 	animation_fps = 60,
-
-	color_schemes = {
-		["custom"] = custom_color_scheme,
-	},
-	color_scheme = "custom",
-	colors = {
-		indexed = {
-			[16] = custom_color_scheme.background
-		}
-	},
-
+	color_scheme = "Catppuccin Mocha (custom)",
 	keys = keys,
 }
 
