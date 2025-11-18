@@ -6,8 +6,15 @@ nix:
 homebrew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 
+.PHONY: terminfo
+terminfo:
+	tempfile=$(mktemp) \
+  		&& curl -o $tempfile https://raw.githubusercontent.com/wezterm/wezterm/main/termwiz/data/wezterm.terminfo \
+  		&& tic -x -o ~/.terminfo $tempfile \
+  		&& rm $tempfile
+
 .PHONY: init
-init: nix homebrew
+init: nix homebrew terminfo
 	nix run nix-darwin -- switch --flake .
 
 .PHONY: bump/flake

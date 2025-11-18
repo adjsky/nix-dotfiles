@@ -195,6 +195,7 @@ local config = {
 	font = wezterm.font("JetBrainsMono Nerd Font"),
 	font_size = 14,
 	front_end = "WebGpu",
+	term = "wezterm",
 
 	default_cursor_style = "BlinkingBar",
 
@@ -212,6 +213,11 @@ local config = {
 		["custom"] = custom_color_scheme,
 	},
 	color_scheme = "custom",
+	colors = {
+		indexed = {
+			[16] = custom_color_scheme.background
+		}
+	},
 
 	keys = keys,
 }
