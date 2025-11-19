@@ -65,6 +65,7 @@
     nelm
     yq-go
     bat
+    frankenphp
   ];
 
   home.file = with config.lib.file; {
