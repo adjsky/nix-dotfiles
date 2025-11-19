@@ -211,6 +211,12 @@ bar.apply_to_config(config, {
 		hostname = { enabled = false },
 		workspace = { enabled = false },
 	},
+	padding = {
+		tabs = {
+			left = 1,
+			right = 1
+		}
+	}
 })
 
 return config
