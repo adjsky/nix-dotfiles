@@ -30,7 +30,6 @@
     deno
     nodejs_24
     devbox
-    ngrok
     direnv
     go
     cargo
@@ -66,6 +65,7 @@
     yq-go
     bat
     frankenphp
+    localtunnel
   ];
 
   home.file = with config.lib.file; {
