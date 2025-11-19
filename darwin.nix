@@ -76,6 +76,7 @@ let
         casks = [
           "zen"
           "tableplus"
+          "herd"
         ];
 
         masApps = {
