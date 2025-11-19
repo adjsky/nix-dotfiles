@@ -33,9 +33,9 @@ visual_bell = '#313244'
 bold = '#bac2de'
 hyperlink = '#89b4fa'
 
-[colors.indexed]
-16 = '#fab387'
-17 = '#f5e0dc'
+# [colors.indexed]
+# 16 = '#fab387'
+# 17 = '#f5e0dc'
 
 [colors.tab_bar]
 background = 'transparent'
