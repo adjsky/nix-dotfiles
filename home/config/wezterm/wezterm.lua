@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 
 local keys = {
 	{
@@ -205,35 +206,10 @@ local config = {
 	keys = keys,
 }
 
-wezterm.plugin.require("https://github.com/nekowinston/wezterm-bar").apply_to_config(config, {
-	position = "bottom",
-	max_width = 32,
-	dividers = "slant_right",
-	indicator = {
-		leader = {
-			enabled = true,
-			off = " ",
-			on = " ",
-		},
-		mode = {
-			enabled = true,
-			names = {
-				resize_mode = "RESIZE",
-				copy_mode = "VISUAL",
-				search_mode = "SEARCH",
-			},
-		},
-	},
-	tabs = {
-		numerals = "arabic",
-		pane_count = "superscript",
-		brackets = {
-			active = { "", ":" },
-			inactive = { "", ":" },
-		},
-	},
-	clock = {
-		enabled = false,
+bar.apply_to_config(config, {
+	modules = {
+		hostname = { enabled = false },
+		workspace = { enabled = false },
 	},
 })
 
