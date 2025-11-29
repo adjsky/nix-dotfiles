@@ -26,7 +26,7 @@
 
   home.packages = with pkgs; [
     nixd
-    nixfmt-rfc-style
+    nixfmt
     deno
     nodejs_24
     devbox
