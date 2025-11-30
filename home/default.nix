@@ -3,6 +3,16 @@
   # Internal compatibility configuration for home-manager, don't change this!
   home.stateVersion = "23.05";
 
+  targets.darwin = {
+    linkApps = {
+      enable = false;
+    };
+    copyApps = {
+      enable = true;
+      enableChecks = false;
+    };
+  };
+
   sops = {
     age.keyFile = "${config.home.homeDirectory}/Library/Application Support/sops/age/keys.txt";
     defaultSopsFile = ../secrets/darwin.yaml;
@@ -66,6 +76,7 @@
     bat
     frankenphp
     localtunnel
+    dust
   ];
 
   home.file = with config.lib.file; {

@@ -2,7 +2,6 @@
   self,
   nix-darwin,
   home-manager,
-  mac-app-util,
   sops-nix,
   ...
 }:
@@ -90,14 +89,12 @@ nix-darwin.lib.darwinSystem {
   modules = [
     configuration
     home-manager.darwinModules.home-manager
-    mac-app-util.darwinModules.default
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.verbose = true;
       home-manager.users.${username} = import ./home;
       home-manager.sharedModules = [
-        mac-app-util.homeManagerModules.default
         sops-nix.homeManagerModules.sops
       ];
     }
