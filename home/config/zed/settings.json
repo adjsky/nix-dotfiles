@@ -35,7 +35,8 @@
     "php": true,
     "git-firefly": true,
     "sql": true,
-    "dockerfile": true
+    "dockerfile": true,
+    "blade": true
   },
   "languages": {
     "Nix": {
@@ -45,6 +46,9 @@
     "PHP": {
       "language_servers": ["intelephense", "!phpactor", "!phptools", "..."],
       "formatter": "language_server"
+    },
+    "Blade": {
+      "language_servers": ["phptools", "!phpactor", "..."]
     },
     "Lua": {
       "formatter": "language_server"
@@ -89,6 +93,8 @@
     "enabled": false
   },
   "file_types": {
-    "XML": ["svg"]
+    "XML": ["svg"],
+    "Blade": ["*.blade.php"],
+    "YAML": ["*.neon"]
   }
 }
