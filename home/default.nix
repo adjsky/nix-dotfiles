@@ -75,7 +75,6 @@
     yq-go
     bat
     frankenphp
-    localtunnel
     dust
   ];
 
