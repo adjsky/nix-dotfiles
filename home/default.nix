@@ -17,7 +17,6 @@
     age.keyFile = "${config.home.homeDirectory}/Library/Application Support/sops/age/keys.txt";
     defaultSopsFile = ../secrets/darwin.yaml;
     secrets = {
-      "amneziawg/ams" = { };
       "gitconfig/work" = { };
       "gitconfig/pers" = { };
       "ssh/work/private_key" = { };
