@@ -44,7 +44,6 @@ let
           "/Applications/Zen.app"
           "${pkgs.vscode}/Applications/Visual Studio Code.app"
           "${pkgs.wezterm}/Applications/WezTerm.app"
-          "${pkgs.slack}/Applications/Slack.app"
         ];
       };
 
@@ -73,13 +72,14 @@ let
         };
 
         casks = [
+          "zed"
+          "amneziavpn"
           "zen"
           "tableplus"
         ];
 
         masApps = {
           Outline = 1356178125;
-          AmneziaWG = 6478942365;
           Yomu = 562211012;
         };
       };

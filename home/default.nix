@@ -51,8 +51,6 @@
     elixir_1_17
     rebar3
     colima
-    zed-editor
-    slack
     sops
     age
     google-chrome
@@ -85,13 +83,6 @@
     "Programming/work/.gitconfig".source =
       mkOutOfStoreSymlink
         config.sops.secrets."gitconfig/work".path;
-    "AmneziaWG/ams_init.conf" = {
-      text = "dummy";
-      onChange = ''
-        cp ${config.sops.secrets."amneziawg/ams".path} ~/AmneziaWG/ams.conf
-        rm ~/AmneziaWG/ams_init.conf
-      '';
-    };
   };
 
   home.sessionVariables = {
