@@ -73,6 +73,7 @@
     bat
     frankenphp
     dust
+    docker
   ];
 
   home.file = with config.lib.file; {
