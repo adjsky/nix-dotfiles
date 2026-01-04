@@ -74,6 +74,7 @@
     frankenphp
     dust
     docker
+    commitizen
   ];
 
   home.file = with config.lib.file; {
