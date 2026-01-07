@@ -21,5 +21,9 @@
       identityFile = config.sops.secrets."ssh/pers/private_key".path;
       identitiesOnly = true;
     };
+    "localhost.run" = {
+      identityFile = config.sops.secrets."ssh/pers/private_key".path;
+      identitiesOnly = true;
+    };
   };
 }
