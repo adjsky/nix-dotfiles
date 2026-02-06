@@ -75,6 +75,7 @@
     dust
     docker
     commitizen
+    nix-sweep
   ];
 
   home.file = with config.lib.file; {
