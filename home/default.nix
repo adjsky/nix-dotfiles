@@ -52,7 +52,6 @@
     colima
     sops
     age
-    google-chrome
     just
     bruno
     pnpm
