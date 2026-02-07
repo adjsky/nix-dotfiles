@@ -53,6 +53,7 @@
     sops
     age
     just
+    just-lsp
     bruno
     pnpm
     php84
