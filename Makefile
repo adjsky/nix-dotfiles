@@ -15,7 +15,8 @@ terminfo:
 
 .PHONY: init
 init: nix homebrew terminfo
-	nix run nix-darwin -- switch --flake .
+	. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+	sudo nix run nix-darwin -- switch --flake .
 
 .PHONY: bump/flake
 bump/flake:
