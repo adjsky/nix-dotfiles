@@ -56,8 +56,8 @@
     just-lsp
     bruno
     pnpm
-    php84
-    php84Packages.composer
+    php85
+    php85Packages.composer
     libargon2
     caddy
     rclone
