@@ -76,6 +76,7 @@
     docker
     commitizen
     nix-sweep
+    vsce
   ];
 
   home.file = with config.lib.file; {
