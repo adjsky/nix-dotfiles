@@ -6,4 +6,6 @@
   plugins = with pkgs.vimPlugins; [
     catppuccin-nvim
   ];
+  withPython3 = true;
+  withRuby = false;
 }
