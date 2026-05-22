@@ -77,6 +77,7 @@
     commitizen
     nix-sweep
     vsce
+    github-cli
   ];
 
   home.file = with config.lib.file; {
