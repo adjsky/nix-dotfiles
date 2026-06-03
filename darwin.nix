@@ -80,7 +80,6 @@ let
         ];
 
         masApps = {
-          Outline = 1356178125;
           Yomu = 562211012;
         };
       };
