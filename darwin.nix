@@ -77,6 +77,7 @@ let
           "amneziavpn"
           "zen"
           "tableplus"
+          "codex"
         ];
 
         masApps = {
