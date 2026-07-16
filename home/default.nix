@@ -46,8 +46,8 @@
     rustfmt
     rustPlatform.rustLibSrc
     gleam
-    erlang_27
-    elixir_1_17
+    beam29Packages.erlang
+    beam29Packages.elixir_1_20
     rebar3
     colima
     sops
@@ -78,6 +78,7 @@
     nix-sweep
     vsce
     github-cli
+    python314
   ];
 
   home.file = with config.lib.file; {
