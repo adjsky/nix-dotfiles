@@ -67,7 +67,6 @@
     sqlite
     process-compose
     tilt
-    werf
     nelm
     yq-go
     bat

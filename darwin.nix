@@ -72,6 +72,10 @@ let
           upgrade = true;
         };
 
+        brews = [
+          "werf"
+        ];
+
         casks = [
           "zed"
           "amneziavpn"
