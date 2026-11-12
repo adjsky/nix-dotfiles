@@ -83,10 +83,6 @@ let
           "tableplus"
           "codex"
         ];
-
-        masApps = {
-          Yomu = 562211012;
-        };
       };
     };
 in
